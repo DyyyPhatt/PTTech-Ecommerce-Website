@@ -1,0 +1,157 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Định nghĩa kiểu chung cho các nút xã hội */
+.social-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 8px 16px;
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 50px;
+  width: 100%;
+  max-width: 250px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  text-transform: capitalize;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  border: 2px solid transparent;
+}
+
+/* Hiệu ứng hover */
+.social-button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
+  border-color: #ddd;
+}
+
+/* Nút Google */
+.google-button {
+  background-color: #4285f4;
+  color: white;
+}
+
+.google-button:hover {
+  background-color: #357ae8;
+}
+
+/* Nút Facebook */
+.facebook-button {
+  background-color: #3b5998;
+  color: white;
+}
+
+.facebook-button:hover {
+  background-color: #2d4373;
+}
+
+/* Hiệu ứng loading */
+.social-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.clamp-2-lines {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.dropdown-container::before {
+  content: "";
+  position: absolute;
+  top: -10px;
+  left: 22px;
+  width: 0;
+  height: 0;
+  border-left: 14px solid transparent;
+  border-right: 14px solid transparent;
+  border-bottom: 11px solid white;
+  z-index: 51;
+  transition: border-bottom-color 0.3s ease;
+}
+
+.dark .dropdown-container::before {
+  border-bottom-color: #1f1f1f;
+}
+
+/* Animation fade-in */
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fade-in 0.3s ease-out;
+}
+
+.ad-popup {
+  position: fixed;
+  bottom: 200px;
+  right: 10px;
+  z-index: 9999;
+}
+
+.discount-code-popup {
+  position: fixed;
+  bottom: 10px;
+  left: 10px;
+  z-index: 9999;
+}
+
+df-messenger {
+  --df-messenger-button-titlebar-color: #1e40af;
+  --df-messenger-button-titlebar-font-color: #ffffff;
+  --df-messenger-chat-background-color: #f9fafb;
+  --df-messenger-font-color: #111827;
+  --df-messenger-bot-message: #e0e7ff;
+  --df-messenger-user-message: #d1fae5;
+  --df-messenger-input-box-color: #ffffff;
+  --df-messenger-input-font-color: #111827;
+  --df-messenger-input-placeholder-font-color: #9ca3af;
+  --df-messenger-send-icon: #2563eb;
+  --df-messenger-minimized-chat-close-icon-color: #ffffff;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(to bottom, #ff4d4f, #ff6f61);
+  border-radius: 10px;
+  box-shadow: inset 0 0 2px rgba(0, 0, 0, 0.25);
+  transition: background 0.3s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(to bottom, #e60023, #ff4d4f);
+}
+
+::-webkit-scrollbar-corner {
+  background: transparent;
+}
+
+.social-share-container {
+  @apply flex flex-wrap gap-4 mt-6 justify-center;
+}
+
+.share-btn {
+  @apply transition-transform transform hover:scale-110;
+}
